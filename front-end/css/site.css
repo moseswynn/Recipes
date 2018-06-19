@@ -1,0 +1,7 @@
+.spacer {
+    margin-top: 100px;
+}
+.btn-dark-hover:hover{
+    /*Makes button text color on btn-success match button text color on btn-warning when hovered*/
+    color: var(--dark);
+}
