@@ -13,12 +13,26 @@ namespace Recipes.Controllers
     {
         private Context db = new Context();
         
-        // GET: Recipe
+        // Get list of recipes and display when the home page is opened.
         public ActionResult Index()
         {
             var Recipes = db.Recipes.ToList();
             return View(Recipes);
         }
 
+        //Get details of recipe or return 404
+        public ActionResult Detail(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Recipe recipe = db.Recipes.Find(id);
+            if(recipe == null)
+            {
+                return HttpNotFound();
+            }
+            return View(recipe);
+        }
     }
 }

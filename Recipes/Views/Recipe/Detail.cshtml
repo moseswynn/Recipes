@@ -1,0 +1,30 @@
+﻿@model Recipes.Models.Recipe
+    @{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        var Instructions = Model.Instructions.ToList();
+    }
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">@Model.Name</h1>
+            <p class="card-text">@Model.Description</p>
+        </div>
+        <div class="card-body">
+            <h3 class="mx-auto">Ingredients</h3>
+        </div>
+        <ul class="list-group list-group-flush">
+            @foreach(var ingredient in Model.Ingredients)
+            {
+                <li class="list-group-item">@ingredient.IngredientText</li>
+            }
+        </ul>
+        <div class="card-body">
+            <h3 class="mx-auto">Instructions</h3>
+        </div>
+        <ul class="list-group list-group-flush">
+            @for(var ind = 0; ind < Model.Instructions.ToList().Count; ind++)
+            {
+                <li class="list-group-item">@ind) @Model.Instructions.Find(i => i.InstructionIndex == ind) </li>
+            }
+        </ul>
+    </div>
+
