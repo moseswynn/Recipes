@@ -7,7 +7,7 @@
 @foreach (var recipe in Model)
 {
     <div class="list-group">
-        <a href="Detail/@recipe.RecipeId" class="list-group-item list-group-item-action my-2">
+        <a href="Recipe/Detail/@recipe.RecipeId" class="list-group-item list-group-item-action my-2">
             <h3>@recipe.Name</h3>
             <p class="hidden-sm">@recipe.Description</p>
         </a>

@@ -1,7 +1,6 @@
 ﻿@model Recipes.Models.Recipe
     @{
         Layout = "~/Views/Shared/_Layout.cshtml";
-        var Instructions = Model.Instructions.ToList();
     }
     <div class="card">
         <div class="card-body">
@@ -23,7 +22,7 @@
         <ul class="list-group list-group-flush">
             @for(var ind = 0; ind < Model.Instructions.ToList().Count; ind++)
             {
-                <li class="list-group-item">@ind) @Model.Instructions.Find(i => i.InstructionIndex == ind) </li>
+                <li class="list-group-item">@(ind + 1)) @Model.Instructions.Find(i => i.InstructionIndex == ind).InstructionText </li>
             }
         </ul>
     </div>
