@@ -14,7 +14,5 @@ namespace Recipes.Models
         //Instruction text
         public string InstructionText { get; set; }
 
-        //Nav prop for many-to-one relationship from Instructions to Recipe
-        public Recipe RelatedRecipe { get; set; }
     }
 }
