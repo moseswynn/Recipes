@@ -12,12 +12,12 @@ namespace Recipes.Controllers
 {
     public class RecipeController : Controller
     {
-        private Context db = new Context();
+        private Context context = new Context();
         
         // Get list of recipes and display when the home page is opened.
         public ActionResult Index()
         {
-            var Recipes = db.Recipes.ToList(); //convert the recipes to a list
+            var Recipes = context.Recipes.ToList(); //convert the recipes to a list
             return View(Recipes); //pass the list of recipes to the view
         }
 
@@ -31,7 +31,7 @@ namespace Recipes.Controllers
             }
 
             //find the recipe, including it's ingredients and instructions, based on the specified id.
-            var recipe = db.Recipes
+            var recipe = context.Recipes
                 .Include(r => r.Ingredients)
                 .Include(r => r.Instructions)
                 .ToList()
