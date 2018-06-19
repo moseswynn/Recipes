@@ -94,6 +94,7 @@
     <Content Include="Content\css\site.css" />
     <Content Include="Content\js\bootstrap.js" />
     <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\site.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>

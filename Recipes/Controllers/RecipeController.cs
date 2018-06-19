@@ -13,7 +13,7 @@ namespace Recipes.Controllers
         public ActionResult Index()
         {
             SampleData data = new SampleData();
-            var Recipes = data.Repo.ToArray();
+            var Recipes = data.Repo;
             return View(Recipes);
         }
     }
