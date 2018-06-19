@@ -108,7 +108,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\RecipeController.cs" />
     <Compile Include="Data\Context.cs" />
-    <Compile Include="Data\SampleData.cs" />
+    <Compile Include="Data\DatabaseInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
