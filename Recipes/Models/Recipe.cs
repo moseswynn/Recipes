@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 
 namespace Recipes.Models
 {
@@ -19,4 +20,5 @@ namespace Recipes.Models
         //Nav prop for one-to-many relationship of Recipe to Instructions
         public List<Instruction> Instructions { get; set; }
     }
+
 }
