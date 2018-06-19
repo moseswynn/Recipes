@@ -51,5 +51,29 @@ namespace Recipes.Controllers
             return View();
         }
 
+        //Get the edit recipe form
+        public ActionResult Edit(int? id)
+        {
+            //if an id was not specified return 400 
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            //find the recipe, including it's ingredients and instructions, based on the specified id.
+            var recipe = context.Recipes
+                .Include(r => r.Ingredients)
+                .Include(r => r.Instructions)
+                .ToList()
+                .Find(r => r.RecipeId == id);
+
+            if (recipe == null)
+            {
+                return HttpNotFound(); //return 404 if a recipe with the specified id can't be found
+            }
+
+            return View(recipe); //pass the recipe to the view
+        }
+
     }
 }

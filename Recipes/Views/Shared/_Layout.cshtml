@@ -15,7 +15,7 @@
     <!--Start navigation bar-->
     <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
         <div class="container">
-            <h1 class="navbar-brand display-1" href="/">Recipes</h1>
+            <a href="/"><h1 class="navbar-brand display-1">Recipes</h1></a>
             <div class="d-none d-md-block">
                 <form class="form-inline">
                     <input class="form-control mr-2" type="search" placeholder="Find a recipe..." aria-label="Search">
@@ -23,7 +23,11 @@
                 </form>
             </div>
             <ul class="navbar-nav">
-                <li class"nav-item"><a class="btn btn-outline-primary bg-dark" href="#" data-toggle="modal" data-target="#newRecipe">New Recipe</a></li>
+                <li class"nav-item"><a class="btn btn-outline-primary mx-2 btn-dark-hover" href="~/Recipe/New">New Recipe</a></li>
+                @if (ViewBag.ParameterTitle == "detail")
+                {
+                    <li class="nav-item"><a class="btn btn-outline-warning" href="~/Recipe/Edit/@Model.RecipeId" >Edit This Recipe</a></li>
+                }
             </ul>
         </div>
     </nav>
