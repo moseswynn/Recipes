@@ -44,5 +44,12 @@ namespace Recipes.Controllers
 
             return View(recipe); //pass the recipe to the view
         }
+
+        //Get the new recipe form
+        public ActionResult New()
+        {
+            return View();
+        }
+
     }
 }
