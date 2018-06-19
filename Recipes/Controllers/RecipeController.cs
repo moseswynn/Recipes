@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Recipes.Models;
-
+using Recipes.Data;
 namespace Recipes.Controllers
 {
     public class RecipeController : Controller
@@ -12,7 +12,9 @@ namespace Recipes.Controllers
         // GET: Recipe
         public ActionResult Index()
         {
-            return View();
+            SampleData data = new SampleData();
+            var Recipes = data.Repo.ToArray();
+            return View(Recipes);
         }
     }
 }
