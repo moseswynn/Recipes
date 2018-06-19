@@ -6,21 +6,37 @@
         <div class="col">
             <div class="form-group">
                 <label class="control-label" for="#nameTextBox">Recipe Name:</label>
-                <input class="form-control" id="nameTextBox" type="text" />
+                @if (ViewBag.ParameterTitle == "edit")
+                {
+                    <input class="form-control" id="nameTextBox" type="text" value="@Model.Name" />
+                }
+                else
+                {
+                    <input class="form-control" id="nameTextBox" type="text" />
+                }
+
             </div>
             <div class="form-group">
                 <label class="control-label" for="#descriptionTextArea">Description:</label>
-                <textarea id="descriptionTextArea" class="form-control"></textarea>
+                @if (ViewBag.ParameterTitle == "edit")
+                {
+                    <textarea id="descriptionTextArea" class="form-control" >@Model.Description</textarea>
+                }
+                else
+                {
+                    <textarea id="descriptionTextArea" class="form-control"></textarea>
+                }
+
             </div>
             <div class="row">
                 <div class="col" id="ingredientsColumn">
                     <h3 class="text-center">Ingredients</h3>
                     <div id="ingredients">
-                        @if(ViewBag.ParameterTitle == "edit")
+                        @if (ViewBag.ParameterTitle == "edit")
                         {
-                            foreach(Ingredient ingredient in Model.Ingredients)
+                            foreach (Ingredient ingredient in Model.Ingredients)
                             {
-                                <input class="mx-auto my-2 w-100 d-block" type="text" value="@ingredient.">
+                                <input class="mx-auto my-2 w-100 d-block" type="text" value="@ingredient.IngredientText">
                             }
                         }
                     </div>
@@ -32,9 +48,9 @@
                 <div class="col" id="instructionsColumn">
                     <h3 class="text-center">Instructions</h3>
                     <div id="instructions">
-                        @if(ViewBag.ParameterTitle == "edit")
+                        @if (ViewBag.ParameterTitle == "edit")
                         {
-                            foreach(Instruction instruction in Model.Instructions.OrderBy(i => i.InstructionIndex))
+                            foreach (Instruction instruction in Model.Instructions.OrderBy(i => i.InstructionIndex))
                             {
                                 <input class="mx-auto my-2 w-100 d-block" type="text" value="@instruction.InstructionText" />
                             }
@@ -46,7 +62,14 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-success w-100 my-2" type="button" onclick="submitRecipeForm('@ViewBag.ParameterTitle', '@Model.RecipeId')">Submit Form</button>
+            @if (ViewBag.Parametertitle == "edit")
+            {
+                <button class="btn btn-success w-100 my-2" type="button" onclick="submitRecipeForm('@ViewBag.ParameterTitle', '@Model.RecipeId')">Submit Form</button>
+            }
+            else
+            {
+            <button class="btn btn-success w-100 my-2" type="button" onclick="submitRecipeForm('@ViewBag.ParameterTitle')">Submit Form</button>
+            }
         </div>
     </div>
 </form>
