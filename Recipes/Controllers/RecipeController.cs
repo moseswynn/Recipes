@@ -14,14 +14,14 @@ namespace Recipes.Controllers
     {
         private Context context = new Context();
         
-        // Get list of recipes and display when the home page is opened.
+        // GET list of recipes and display when the home page is opened.
         public ActionResult Index()
         {
             var Recipes = context.Recipes.ToList(); //convert the recipes to a list
             return View(Recipes); //pass the list of recipes to the view
         }
 
-        //Get details of the recipe based on it's id
+        // GET details of the recipe based on it's id
         public ActionResult Detail(int? id)
         {
             //if an id was not specified return 400 
@@ -45,13 +45,32 @@ namespace Recipes.Controllers
             return View(recipe); //pass the recipe to the view
         }
 
-        //Get the new recipe form
+        //GET the new recipe form
         public ActionResult New()
         {
             return View();
         }
 
-        //Get the edit recipe form
+        //POST a new recipe
+        [HttpPost]
+        public ActionResult New(Recipe recipe)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Recipes.Add(recipe);
+                context.SaveChanges();
+                var response = "success";
+                return Content(response);
+            }
+            else
+            {
+                var response = "failure";
+                return Content(response);
+            }
+            
+        }
+
+        //GET the edit recipe form
         public ActionResult Edit(int? id)
         {
             //if an id was not specified return 400 
@@ -75,6 +94,18 @@ namespace Recipes.Controllers
             return View(recipe); //pass the recipe to the view
         }
 
+        //POST edit recipe form
+        [HttpPost]
+        public ActionResult Edit (Recipe recipe)
+        {
+            var toUpdate = context.Recipes.Find(recipe.RecipeId);
+            context.Recipes.Remove(toUpdate);
+            context.Recipes.Add(recipe);
+            context.SaveChanges();
+
+            return Content("success");
+        }
+        //GET delete recipe from database
         public ActionResult Delete(int? id)
         {
             context.Recipes.Remove(context.Recipes.Find(id));

@@ -8,6 +8,7 @@ namespace Recipes.Data
 {
     internal class DatabaseInitializer : DropCreateDatabaseIfModelChanges<Context>
     {
+        //create database with seed data.
         protected override void Seed(Context context)
         {
             var easyMac = new Recipe()

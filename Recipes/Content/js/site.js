@@ -67,18 +67,25 @@ function submitRecipeForm(ParameterTitle, RecipeId) {
     if (ParameterTitle == 'edit') {
         payLoad['RecipeId'] = RecipeId
     }
-    //TODO: POST data and wait for response, if success redirect to home, else post error
-    
-    fetch('/Recipe/Save', {
+    //POST data and wait for response, if success redirect to home, else post error
+    if (ParameterTitle == 'create') {
+        var url = '/Recipe/New'
+    } else {
+        var url = '/Recipe/Edit'
+    }
+    fetch(url, {
         method: 'POST',
-        redirect: 'follow',
         body: JSON.stringify(payLoad),
         headers: {
             'Content-Type': 'application/json'
         }
     })
-        .then(response => response.json())
-        .catch(error => console.error('error:', error))
-        .then(response => console.log('success:', response));
-    //TODO: check if response is success, if yes redirect to list view, else display error message
+        .then(response => {
+            console.log(response);
+            if (response.ok) {
+                window.location = "/";
+            } else {
+                alert("something went wrong");
+            }
+        });
 }

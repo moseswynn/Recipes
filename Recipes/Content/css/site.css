@@ -1,4 +1,5 @@
 .spacer {
+    /* add space above content to keep it from being hidden by navbar*/
     margin-top: 100px;
 }
 .btn-dark-hover:hover{
