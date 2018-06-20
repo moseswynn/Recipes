@@ -75,5 +75,11 @@ namespace Recipes.Controllers
             return View(recipe); //pass the recipe to the view
         }
 
+        public ActionResult Delete(int? id)
+        {
+            context.Recipes.Remove(context.Recipes.Find(id));
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

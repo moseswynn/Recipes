@@ -68,8 +68,10 @@ function submitRecipeForm(ParameterTitle, RecipeId) {
         payLoad['RecipeId'] = RecipeId
     }
     //TODO: POST data and wait for response, if success redirect to home, else post error
-    fetch('~/Recipe/Save', {
+    
+    fetch('/Recipe/Save', {
         method: 'POST',
+        redirect: 'follow',
         body: JSON.stringify(payLoad),
         headers: {
             'Content-Type': 'application/json'

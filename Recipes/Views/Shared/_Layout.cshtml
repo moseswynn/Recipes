@@ -26,7 +26,8 @@
                 <li class"nav-item"><a class="btn btn-outline-primary mx-2 btn-dark-hover" href="~/Recipe/New">New Recipe</a></li>
                 @if (ViewBag.ParameterTitle == "detail")
                 {
-                    <li class="nav-item"><a class="btn btn-outline-warning" href="~/Recipe/Edit/@Model.RecipeId" >Edit This Recipe</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-warning mx-2" href="~/Recipe/Edit/@Model.RecipeId" >Edit This Recipe</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-danger mx-2" href="~/Recipe/Delete/@Model.RecipeId">Delete This Recipe</a></li>
                 }
             </ul>
         </div>
