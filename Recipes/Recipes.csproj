@@ -101,13 +101,6 @@
     <Content Include="Content\js\bootstrap.js" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\site.js" />
-    <Content Include="Content\open-iconic\font\css\open-iconic-bootstrap.css" />
-    <Content Include="Content\open-iconic\font\css\open-iconic-bootstrap.min.css" />
-    <Content Include="Content\open-iconic\font\css\open-iconic-foundation.css" />
-    <Content Include="Content\open-iconic\font\css\open-iconic-foundation.min.css" />
-    <Content Include="Content\open-iconic\font\css\open-iconic.css" />
-    <Content Include="Content\open-iconic\font\css\open-iconic.min.css" />
-    <Content Include="Content\open-iconic\font\fonts\open-iconic.svg" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -134,22 +127,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <Content Include="Content\open-iconic\FONT-LICENSE" />
-    <Content Include="Content\open-iconic\font\css\open-iconic-bootstrap.less" />
-    <Content Include="Content\open-iconic\font\css\open-iconic-bootstrap.scss" />
-    <Content Include="Content\open-iconic\font\css\open-iconic-bootstrap.styl" />
-    <Content Include="Content\open-iconic\font\css\open-iconic-foundation.less" />
-    <Content Include="Content\open-iconic\font\css\open-iconic-foundation.scss" />
-    <Content Include="Content\open-iconic\font\css\open-iconic-foundation.styl" />
-    <Content Include="Content\open-iconic\font\css\open-iconic.less" />
-    <Content Include="Content\open-iconic\font\css\open-iconic.scss" />
-    <Content Include="Content\open-iconic\font\css\open-iconic.styl" />
-    <Content Include="Content\open-iconic\font\fonts\open-iconic.eot" />
-    <Content Include="Content\open-iconic\font\fonts\open-iconic.otf" />
-    <Content Include="Content\open-iconic\font\fonts\open-iconic.ttf" />
-    <Content Include="Content\open-iconic\font\fonts\open-iconic.woff" />
-    <Content Include="Content\open-iconic\ICON-LICENSE" />
-    <Content Include="Content\open-iconic\README.md" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Recipe\Index.cshtml" />
