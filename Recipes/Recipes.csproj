@@ -102,6 +102,7 @@
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\site.js" />
     <Content Include="Global.asax" />
+    <None Include="Properties\PublishProfiles\moseswynn-recipes - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
