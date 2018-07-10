@@ -1,6 +1,5 @@
 # Recipes
 ## Moses Wynn - May 2018 C#/.NET Final Project
 
-A website that functions as a recipe box.
-
-The only the only dependency is entity framework.
+An ASP.NET MVC web application created for my Code Louisville final project.
+The project is published [here](http://recipes.moseswynn.com)
